@@ -1,37 +1,18 @@
 'use strict';
 
-const lang = prompt('Введите значение переменной lang');
-const namePerson = prompt('Введите имя');
+const str = prompt('Введите значение');
 
-const langArr = [];
+const changeString = function(variable) {
+    if (typeof variable === 'string') {
+        variable = variable.trim();
+        if (variable.length > 30) {
+            variable = variable.slice(0, 30) + '...';
+        }
+        console.log(variable);
 
-if (lang === 'ru') {
-    console.log('ПН, ВТ, СР, ЧТ, ПТ, СБ, ВС');
-} else if (lang === 'en') {
-    console.log('Sun, Mon, Tue, Wed, Thu, Fri, Sat');
-} else {
-    console.log('Неверное значение');
-}
+    } else {
+        console.log('В качестве аргумента передана не строка');
+    }
+};
 
-switch (true) {
-    case lang === 'ru':
-		console.log('ПН, ВТ, СР, ЧТ, ПТ, СБ, ВС');
-        break;
-    case lang === 'en':
-        console.log('Sun, Mon, Tue, Wed, Thu, Fri, Sat');
-        break;
-    default:
-            console.log('Неверное значение');
-}
-
-
-langArr['ru'] = ['Пн','Вт','СР','Чт','Пт','Сб','Вс'];
-langArr['en'] = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
-
-
-let functionName = (namePerson === 'Артем') ? 'директор' : (namePerson === 'Александр') ? 'преподаватель' : 'студент' ;
-
-
-console.log(langArr[lang]);
-console.log(functionName);
-  
+changeString (str);
