@@ -1,18 +1,21 @@
 'use strict';
 
-const str = prompt('Введите значение');
+let str;
+let num;
 
-const changeString = function(variable) {
-    if (typeof variable === 'string') {
-        variable = variable.trim();
-        if (variable.length > 30) {
-            variable = variable.slice(0, 30) + '...';
-        }
-        console.log(variable);
-
-    } else {
-        console.log('В качестве аргумента передана не строка');
-    }
+const isNumber = function (num) {
+    return !isNaN(parseFloat(num)) && isFinite(num);
 };
 
-changeString (str);
+const asking = function() {
+    do {
+    str = prompt('Введите число');
+} while (!isNumber(str));
+    if (str) {
+    str = str.trim();
+    str = +str;
+    console.log(str, typeof(str));
+    } 
+};
+
+asking();
