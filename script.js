@@ -15,5 +15,5 @@ for (let i = 2; i <= num; i++) {
            check = 0;}
       }
    if (check == 1) {
-       console.log(i);}
+       console.log(i, ":делители этого числа 1 и ", i);}
 }
